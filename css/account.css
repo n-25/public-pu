@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wrap_login {
+  background-image: url(../images/account/bg_login.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;  
+}
+
+.wrap_register {
+  background-image: url(../images/account/bg_account.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.wrap_default {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.login_btn {
+  padding: 5px 10px;
+}
+
+.border1 {
+  border: 1px solid #dee2e6!important;
+  border-radius: 0.25rem;
+}
+
+.border2 {
+  border: 2px solid #dee2e6!important;
+  border-radius: 0.25rem;
+}
+
+.register_subtitle {
+  margin-top: 50px;
+}
+
+.friend_card {
+  position: relative;
+  margin: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+}
+
+.account-title {
+  color: #428bca;
+  font-size: 15px;
+  margin-bottom: .75rem;
+  font-weight: 700;
+}
+
+.account-text {
+  font-size: 15px;
+  margin-bottom: .75rem;
+  font-weight: 700;
+}
+
+.powerup-red {
+  color: #db2a30;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.powerup-green {
+  color: #28a745;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  margin-top: 4px;
+}
+
+
+// Toggle Switch
+
+@green: #2ecc71;
+@lightgray: lightgray;
+@background: whitesmoke;
+
+.inactiveMixin {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.beforeAnimation {
+  -moz-transition: .2s cubic-bezier(.24, 0, .5, 1);
+  -o-transition: .2s cubic-bezier(.24, 0, .5, 1);
+  -webkit-transition: .2s cubic-bezier(.24, 0, .5, 1);
+  transition: .2s cubic-bezier(.24, 0, .5, 1);
+}
+
+.afterAnimation {
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, .04), 0 4px 9px hsla(0, 0%, 0%, .13), 0 3px 3px hsla(0, 0%, 0%, .05);
+  -moz-transition: .35s cubic-bezier(.54, 1.60, .5, 1);
+  -o-transition: .35s cubic-bezier(.54, 1.60, .5, 1);
+  -webkit-transition: .35s cubic-bezier(.54, 1.60, .5, 1);
+  transition: .35s cubic-bezier(.54, 1.60, .5, 1);
+}
+
+// Mobile Toggle Switch
+
+@switch-transition-duration: 0.25s;
+@switch-transition-timing-function: ease;
+
+@switch-label-width: 48px;
+@switch-label-height: 24px;
+
+@switch-rail-width: 100%;
+@switch-rail-height: 100%;
+@switch-rail-background-color: #dedede;
+@switch-rail-border-radius: 9999em;
+@switch-rail-checked-background-color: #89c12d;
+
+@switch-knob-width: 24px;
+@switch-knob-height: 24px;
+@switch-knob-border-radius: 50%;
+@switch-knob-background-color: #fff;
+@switch-knob-box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+@switch-knob-checked-left: @switch-knob-width;
+
+/* Switch Container */
+.switch {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the checkbox input (only needed for `:checked` property) */
+.switch-input {
+  display: none;
+}
+
+/* Switch */
+.switch-label {
+  display: block;
+  width: @switch-label-width;
+  height: @switch-label-height;
+  text-indent: -150%;
+  clip: rect(0 0 0 0);
+  color: transparent;
+  user-select: none;
+  
+  /* Switch Rail & Knob */
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  /* Switch Rail */
+  &:before {
+    width: @switch-rail-width;
+    height: @switch-rail-height;
+    background-color: @switch-rail-background-color;
+    border-radius: @switch-rail-border-radius;
+    transition: background-color @switch-transition-duration @switch-transition-timing-function;
+  }
+  
+  /* Switch Knob */
+  &:after {
+    top: 0;
+    left: 0;
+    width: @switch-knob-width;
+    height: @switch-knob-height;
+    border-radius: @switch-knob-border-radius;
+    background-color: @switch-knob-background-color;
+    box-shadow: @switch-knob-box-shadow;
+    transition: left @switch-transition-duration @switch-transition-timing-function;
+  }
+}
+
+/* When input is checked */
+.switch-input:checked + .switch-label {
+  /* Switch Rail */
+  &:before {
+    background-color: @switch-rail-checked-background-color;
+  }
+  
+  /* Switch Knob */
+  &:after {
+    left: @switch-knob-checked-left;
+  }
+}
